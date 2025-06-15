@@ -1,47 +1,79 @@
-# wanda-vision
+# Wanda-Vision Magic Hand Effect
 
-## Overview
-Wanda Vision is a project that utilizes computer vision to detect hand movements and display magical effects on the screen, inspired by the magic effects seen in the MCU.
+This project uses AI-powered hand tracking to create a real-time Wanda-style magic effect on your webcam feed. Built with Python, OpenCV, and MediaPipe, it's a beginner-friendly introduction to computer vision and interactive effects.
 
-## Project Structure
-```
-wanda-vision
-├── src
-│   ├── main.py          # Entry point of the application
-│   ├── effects
-│   │   └── magic.py     # Contains the MagicEffect class for rendering effects
-│   ├── models
-│   │   └── hand_tracking.py # Contains the HandTracker class for hand detection
-│   └── utils
-│       └── helpers.py    # Utility functions for model loading and frame preprocessing
-├── requirements.txt      # Lists project dependencies
-├── README.md             # Project documentation
-└── .gitignore            # Files to ignore in version control
-```
+## Features
 
-## Setup Instructions
-1. Clone the repository:
-   ```
-   git clone https://github.com/yourusername/wanda-vision.git
+- Real-time hand detection using MediaPipe
+- Magic glow effect drawn on your hand (like Wanda Maximoff in the MCU)
+- Easy to run and extend
+
+## Requirements
+
+- Python 3.10 or 3.11 (MediaPipe does **not** support Python 3.12+)
+- Webcam
+
+## Installation
+
+1. **Clone the repository:**
+
+   ```sh
+   git clone https://github.com/sarrazer24/wanda-vision.git
    cd wanda-vision
    ```
 
-2. Install the required dependencies:
+2. **Create and activate a virtual environment (recommended):**
+
+   ```sh
+   python -m venv venv
+   .\venv\Scripts\activate
    ```
+
+3. **Install dependencies:**
+   ```sh
    pip install -r requirements.txt
    ```
 
 ## Usage
-To run the application, execute the following command:
-```
-python src/main.py
-```
-Ensure that your camera is accessible and that the necessary permissions are granted.
 
-## Functionality
-- The application captures video input from the camera.
-- It processes hand movements using a computer vision model.
-- Based on the detected movements, magical effects are rendered on the screen.
+1. Make sure your webcam is connected.
+2. Run the main script:
+   ```sh
+   python src/main.py
+   ```
+3. Move your hand in front of the camera and watch the magic effect appear!
 
-## Contributing
-Contributions are welcome! Please feel free to submit a pull request or open an issue for any suggestions or improvements.
+## Project Structure
+
+```
+wanda-vision/
+  README.md
+  requirements.txt
+  src/
+    main.py
+    effects/
+      magic.py
+    models/
+      hand_tracking.py
+    utils/
+      helpers.py
+```
+
+- `main.py`: Runs the application.
+- `effects/magic.py`: Draws the magic effect.
+- `models/hand_tracking.py`: Handles hand detection.
+- `utils/helpers.py`: (Optional) Helper functions.
+
+## Troubleshooting
+
+- If you get an error about `mediapipe` not installing, make sure you are using Python 3.10 or 3.11.
+- If your webcam doesn't turn on, check that it's not being used by another application.
+
+## Credits
+
+- [MediaPipe](https://google.github.io/mediapipe/) for hand tracking
+- [OpenCV](https://opencv.org/) for video processing
+
+---
+
+Enjoy your Wanda-Vision
